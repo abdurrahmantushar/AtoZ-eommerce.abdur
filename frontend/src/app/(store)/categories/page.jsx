@@ -142,6 +142,8 @@ async function getCategoriesWithCount() {
   return categoriesWithCount;
 }
 
+export const dynamic = "force-dynamic";
+
 export default async function CategoriesPage() {
   const categories =
     await getCategoriesWithCount();

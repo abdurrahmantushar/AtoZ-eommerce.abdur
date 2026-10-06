@@ -1,7 +1,6 @@
-
 "use client";
 
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import Link from "next/link";
 import {
   ArrowLeft,
@@ -69,7 +68,7 @@ const sortOptions = [
   },
 ];
 
-export default function SearchPage() {
+function SearchContent() {
   const searchParams = useSearchParams();
 
   const [query, setQuery] = useState("");
@@ -704,3 +703,10 @@ function FilterPanel({
   );
 }
 
+export default function SearchPage() {
+  return (
+    <Suspense fallback={null}>
+      <SearchContent />
+    </Suspense>
+  );
+}

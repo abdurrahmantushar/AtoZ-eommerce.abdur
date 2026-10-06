@@ -9,6 +9,8 @@ import Benefits from "@/components/home/Benefits";
 import Newsletter from "@/components/home/Newsletter";
 import Footer from "@/components/layout/Footer";
 
+export const dynamic = "force-dynamic";
+
 export default function HomePage() {
   return (
     <>

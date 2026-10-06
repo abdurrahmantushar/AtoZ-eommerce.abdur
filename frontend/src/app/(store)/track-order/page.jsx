@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import {
@@ -48,7 +48,7 @@ const statusSteps = [
   },
 ];
 
-export default function TrackOrderPage() {
+function TrackOrderContent() {
   const searchParams = useSearchParams();
 
   const [trackingCode, setTrackingCode] = useState(
@@ -284,7 +284,11 @@ export default function TrackOrderPage() {
                           </p>
 
                           <p className="mt-1 text-xs text-[var(--muted)]">
-                            {active ? step.description : completed ? "Completed" : "Waiting"}
+                            {active
+                              ? step.description
+                              : completed
+                                ? "Completed"
+                                : "Waiting"}
                           </p>
                         </div>
                       </div>
@@ -427,7 +431,9 @@ export default function TrackOrderPage() {
                 <div className="rounded-[24px] border border-[var(--border)] bg-white p-6 shadow-sm">
                   <div className="flex items-center gap-2">
                     <MapPin size={19} className="text-[var(--primary)]" />
-                    <h2 className="text-lg font-semibold">Shipping Address</h2>
+                    <h2 className="text-lg font-semibold">
+                      Shipping Address
+                    </h2>
                   </div>
 
                   <div className="mt-5 space-y-3 text-sm">
@@ -496,5 +502,13 @@ export default function TrackOrderPage() {
 
       <Footer />
     </div>
+  );
+}
+
+export default function TrackOrderPage() {
+  return (
+    <Suspense fallback={null}>
+      <TrackOrderContent />
+    </Suspense>
   );
 }

@@ -1,7 +1,6 @@
-
 "use client";
 
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { useSearchParams } from "next/navigation";
@@ -17,23 +16,20 @@ const priceRanges = {
     minPrice: 0,
     maxPrice: 50,
   },
-
   "50-100": {
     minPrice: 50,
     maxPrice: 100,
   },
-
   "100-200": {
     minPrice: 100,
     maxPrice: 200,
   },
-
   "200-plus": {
     minPrice: 200,
   },
 };
 
-export default function ProductsPage() {
+function ProductsContent() {
   const searchParams = useSearchParams();
 
   const [search, setSearch] = useState("");
@@ -381,3 +377,10 @@ export default function ProductsPage() {
   );
 }
 
+export default function ProductsPage() {
+  return (
+    <Suspense fallback={null}>
+      <ProductsContent />
+    </Suspense>
+  );
+}
