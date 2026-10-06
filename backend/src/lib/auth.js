@@ -13,38 +13,42 @@ export const auth = betterAuth({
     client,
   }),
 
-  plugins: [
-    bearer(),
-  ],
+  plugins: [bearer()],
 
-user: {
-  additionalFields: {
-    role: {
-      type: ["user", "admin"],
-      required: false,
-      defaultValue: "user",
-      input: false,
-    },
+  user: {
+    additionalFields: {
+      role: {
+        type: ["user", "admin"],
+        required: false,
+        defaultValue: "user",
+        input: false,
+      },
 
-    phoneNumber: {
-      type: "string",
-      required: false,
-      input: true,
-    },
+      phoneNumber: {
+        type: "string",
+        required: false,
+        input: true,
+      },
 
-    dateOfBirth: {
-      type: "string",
-      required: false,
-      input: true,
+      dateOfBirth: {
+        type: "string",
+        required: false,
+        input: true,
+      },
     },
   },
-},
 
   emailAndPassword: {
     enabled: true,
   },
 
-  trustedOrigins: [
-    process.env.FRONTEND_URL,
-  ],
+  trustedOrigins: [process.env.FRONTEND_URL],
+
+  advanced: {
+    useSecureCookies: true,
+    defaultCookieAttributes: {
+      sameSite: "none",
+      secure: true,
+    },
+  },
 });
