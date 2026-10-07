@@ -56,11 +56,10 @@ export default function ProductCard({ product }) {
         <button
           type="button"
           onClick={() => toggleWishlist(product)}
-          className={`absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full backdrop-blur-md transition ${
-            liked
+          className={`absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full backdrop-blur-md transition ${liked
               ? "bg-black text-white"
               : "bg-white/90 text-black hover:bg-black hover:text-white"
-          }`}
+            }`}
           aria-label="Toggle wishlist"
         >
           <Heart
@@ -102,12 +101,12 @@ export default function ProductCard({ product }) {
 
         <div className="mt-2 flex items-center gap-2">
           <span className="text-base font-semibold">
-            ${product.price}
+            ৳{product.price}
           </span>
 
           {oldPrice && oldPrice > product.price && (
             <span className="text-sm text-[var(--muted-light)] line-through">
-              ${oldPrice}
+              ৳{oldPrice}
             </span>
           )}
         </div>

@@ -50,25 +50,24 @@ export default function LoginPage() {
     try {
       setLoading(true);
 
-      const { error: signInError } =
-        await authClient.signIn.email({
-          email: form.email.trim(),
-          password: form.password,
-          rememberMe: form.remember,
-        });
+const { error: signInError } =
+  await authClient.signIn.email({
+    email: form.email.trim(),
+    password: form.password,
+    rememberMe: form.remember,
+  });
 
-      if (signInError) {
-        setError(
-          signInError.message ||
-            "Invalid email or password."
-        );
-        return;
-      }
+if (signInError) {
+  setError(
+    signInError.message ||
+      "Invalid email or password."
+  );
+  return;
+}
 
-      await authClient.getSession();
+router.replace("/account");
+router.refresh();
 
-      router.replace("/account");
-      router.refresh();
     } catch (error) {
       console.error("Login error:", error);
 

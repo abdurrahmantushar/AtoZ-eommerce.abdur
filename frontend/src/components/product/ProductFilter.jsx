@@ -13,20 +13,20 @@ const priceRanges = [
     value: "All",
   },
   {
-    label: "Under $50",
-    value: "under-50",
+    label: "Under ৳500",
+    value: "under-500",
   },
   {
-    label: "$50 - $100",
-    value: "50-100",
+    label: "৳500 - ৳1,000",
+    value: "500-1000",
   },
   {
-    label: "$100 - $200",
-    value: "100-200",
+    label: "৳1,000 - ৳2,000",
+    value: "1000-2000",
   },
   {
-    label: "$200+",
-    value: "200-plus",
+    label: "৳2,000+",
+    value: "2000-plus",
   },
 ];
 

@@ -20,28 +20,23 @@ const API_URL =
 const priceRanges = [
   {
     label: "All prices",
-    min: undefined,
-    max: undefined,
+    value: "All",
   },
   {
-    label: "Under $50",
-    min: 0,
-    max: 50,
+    label: "Under ৳500",
+    value: "under-500",
   },
   {
-    label: "$50 - $100",
-    min: 50,
-    max: 100,
+    label: "৳500 - ৳1,000",
+    value: "500-1000",
   },
   {
-    label: "$100 - $200",
-    min: 100,
-    max: 200,
+    label: "৳1,000 - ৳2,000",
+    value: "1000-2000",
   },
   {
-    label: "$200+",
-    min: 200,
-    max: undefined,
+    label: "৳2,000+",
+    value: "2000-plus",
   },
 ];
 

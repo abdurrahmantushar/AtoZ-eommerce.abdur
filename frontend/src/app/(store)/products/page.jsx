@@ -12,20 +12,20 @@ import ProductFilter from "@/components/product/ProductFilter";
 import ProductSort from "@/components/product/ProductSort";
 
 const priceRanges = {
-  "under-50": {
+  "under-500": {
     minPrice: 0,
-    maxPrice: 50,
+    maxPrice: 500,
   },
-  "50-100": {
-    minPrice: 50,
-    maxPrice: 100,
+  "500-1000": {
+    minPrice: 500,
+    maxPrice: 1000,
   },
-  "100-200": {
-    minPrice: 100,
-    maxPrice: 200,
+  "1000-2000": {
+    minPrice: 1000,
+    maxPrice: 2000,
   },
-  "200-plus": {
-    minPrice: 200,
+  "2000-plus": {
+    minPrice: 2000,
   },
 };
 

@@ -117,7 +117,7 @@ export default function FlashSale() {
             <h2 className="mt-5 max-w-3xl text-4xl font-semibold leading-[0.95] tracking-[-0.05em] sm:text-5xl lg:text-7xl">
               Flash sale.
               <br />
-              Don&apos;t miss it.
+              Don't miss it.
             </h2>
 
             <p className="mt-6 max-w-xl text-sm leading-6 text-white/55 sm:text-base">
@@ -316,21 +316,21 @@ function SaleCard({ product }) {
           {product.name}
         </Link>
 
-        <div className="mt-2 flex items-center gap-2">
-          <span className="text-base font-semibold !text-white">
-            ${product.price}
-          </span>
+<div className="mt-2 flex items-center gap-2">
+  <span className="text-base font-semibold !text-white">
+    ৳{product.price}
+  </span>
 
-          <span className="text-sm text-white/35 line-through">
-            ${product.comparePrice}
-          </span>
+  <span className="text-sm text-white/35 line-through">
+    ৳{product.comparePrice}
+  </span>
 
-          {discount > 0 && (
-            <span className="ml-auto rounded-full bg-white/10 px-2 py-1 text-[9px] font-semibold text-[#dfff00]">
-              {discount}% OFF
-            </span>
-          )}
-        </div>
+  {discount > 0 && (
+    <span className="ml-auto rounded-full bg-white/10 px-2 py-1 text-[9px] font-semibold text-[#dfff00]">
+      {discount}% OFF
+    </span>
+  )}
+</div>
       </div>
     </article>
   );

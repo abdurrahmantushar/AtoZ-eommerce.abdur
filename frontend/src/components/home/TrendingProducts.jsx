@@ -198,18 +198,17 @@ function TrendingCard({ product }) {
           </div>
         </div>
 
-        <div className="mt-2 flex items-center gap-2">
-          <span className="text-base font-semibold text-[var(--foreground)]">
-            ${product.price}
-          </span>
+<div className="mt-2 flex items-center gap-2">
+  <span className="text-base font-semibold">
+    ৳{product.price}
+  </span>
 
-          {oldPrice &&
-            oldPrice > product.price && (
-              <span className="text-sm text-[var(--muted-light)] line-through">
-                ${oldPrice}
-              </span>
-            )}
-        </div>
+  {oldPrice && oldPrice > product.price && (
+    <span className="text-sm text-[var(--muted-light)] line-through">
+      ৳{oldPrice}
+    </span>
+  )}
+</div>
       </div>
     </article>
   );

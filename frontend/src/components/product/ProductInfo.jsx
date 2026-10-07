@@ -116,23 +116,23 @@ export default function ProductInfo({ product }) {
         </span>
       </div>
 
-      <div className="mt-6 flex flex-wrap items-center gap-3">
-        <span className="text-2xl font-semibold">
-          ${Number(product?.price || 0).toFixed(2)}
-        </span>
+<div className="mt-6 flex flex-wrap items-center gap-3">
+  <span className="text-2xl font-semibold">
+    ৳{Number(product?.price || 0).toFixed(2)}
+  </span>
 
-        {hasOldPrice && (
-          <>
-            <span className="text-base text-[var(--muted-light)] line-through">
-              ${Number(product.oldPrice).toFixed(2)}
-            </span>
+  {hasOldPrice && (
+    <>
+      <span className="text-base text-[var(--muted-light)] line-through">
+        ৳{Number(product.oldPrice).toFixed(2)}
+      </span>
 
-            <span className="rounded-full bg-[#111111] px-3 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-white">
-              Save {discountPercent}%
-            </span>
-          </>
-        )}
-      </div>
+      <span className="rounded-full bg-[#111111] px-3 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-white">
+        Save {discountPercent}%
+      </span>
+    </>
+  )}
+</div>
 
       <p className="mt-6 max-w-xl text-sm leading-7 text-[var(--muted)]">
         {product?.description ||
